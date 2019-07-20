@@ -1,0 +1,3 @@
+const bingoList = [];
+
+export {bingoList};
