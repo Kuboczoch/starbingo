@@ -1,17 +1,25 @@
-.App {
+#root {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
+.App {
+  display: inline-block;
+}
+
 $size: 650px;
 
 .bingo {
   font-size: 18px;
-  position: absolute;
+  position: relative;
   width: $size;
   height: $size;
+  @media screen and (max-width: 720px) {
+    width: 100vw;
+    overflow-wrap: break-word;
+  }
 
   .row {
     width: 100%;
@@ -50,6 +58,15 @@ $size: 650px;
       &::selection {
         color: white;
       }
+    }
+
+    @media screen and (max-width: 720px) {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 15px 2px 0 2px;
+      font-size:16px;
     }
   }
 
