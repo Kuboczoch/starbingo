@@ -66,7 +66,7 @@ $size: 650px;
       display: inline-block;
       vertical-align: middle;
       padding: 15px 2px 0 2px;
-      font-size:16px;
+      font-size: 16px;
     }
   }
 
@@ -75,5 +75,39 @@ $size: 650px;
     font-size: 20px;
     background-color: #1a9cff;
     color: white;
+  }
+
+  .reset {
+    position: absolute;
+    left: calc(50% - 50px);
+    width: 100px;
+    bottom: -60px;
+    opacity: 0.5;
+    transition: 0.5s all;
+    margin-bottom: 10px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.resetAnimation {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    transition: 0.5s all;
+    z-index: 100;
+  }
+
+  &.on {
+    &:before {
+      background-color: #1a9cff;
+    }
   }
 }
