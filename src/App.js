@@ -43,7 +43,7 @@ class App extends Component {
     };
 
     handleReset = () => {
-        this.setState({resetAnimation: " on"});
+        this.setState({resetAnimation: " resetAnimation"});
         sleep(500).then(() => {
             this.table = this.createTable();
             saveTable(this.table);
@@ -53,7 +53,7 @@ class App extends Component {
 
     render() {
         return (
-            <div className={"App resetAnimation" + this.state.resetAnimation}>
+            <div className={"App" + this.state.resetAnimation}>
                 <Bingo
                     handleUpdate={this.handleUpdate}
                     handleReset={this.handleReset}
