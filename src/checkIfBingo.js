@@ -1,5 +1,4 @@
 export function checkIfBingo(data) {
-    console.log(data);
     for (let i = 0; i < 5; i++)
         if (data[i * 5][1])
             if (data[i * 5 + 1][1])
