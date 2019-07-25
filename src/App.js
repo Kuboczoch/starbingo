@@ -5,6 +5,7 @@ import {checkTable, loadTable, saveTable} from "./localstorageManager";
 import Bingo from "./Bingo";
 import Fireworks from 'fireworks-react';
 import {checkIfBingo} from './checkIfBingo';
+import bingomp3 from './bingo.mp3';
 
 const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -66,10 +67,9 @@ class App extends Component {
             };
             if (this.state.bingo)
                 return <div><Fireworks width={window.innerWidth} height={window.innerHeight} style={style}/>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/U5TqIdff_DQ?controls=0&autoplay=true"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen={false} style={style}/>
+                    <audio autoPlay="autoplay" loop={true}>
+                            <source src={bingomp3}/>
+                    </audio>
                 </div>;
             else
                 return ""
